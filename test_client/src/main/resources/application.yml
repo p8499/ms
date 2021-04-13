@@ -1,0 +1,28 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: client
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:db01
+    username: username
+    password: password
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    database: oracle
+    #    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+eureka:
+  client:
+    service-url:
+      defaultZone: http://pm11:8080/eureka/
+
